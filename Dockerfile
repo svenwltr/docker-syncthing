@@ -1,7 +1,7 @@
 FROM alpine:edge
 MAINTAINER Sven Walter <sven@wltr.eu>
 
-ARG SYNCTHING_VERSION=0.14.10
+ARG SYNCTHING_VERSION=v0.14.10
 
 ENV SYNCTHING_DATA=/data
 ENV SYNCTHING_HOME=/syncthing
@@ -18,7 +18,7 @@ RUN set -x \
         ca-certificates \
  && mkdir -p ${SYNCTHING_DATA} \
  && mkdir -p ${SYNCTHING_HOME} \
- && curl -L -o syncthing.tar.gz https://github.com/syncthing/syncthing/releases/download/v$SYNCTHING_VERSION/syncthing-linux-amd64-v$SYNCTHING_VERSION.tar.gz \
+ && curl -L -o syncthing.tar.gz https://github.com/syncthing/syncthing/releases/download/$SYNCTHING_VERSION/syncthing-linux-amd64-$SYNCTHING_VERSION.tar.gz \
  && tar -xzvf syncthing.tar.gz \
  && rm -f syncthing.tar.gz \
  && mv syncthing-linux-amd64-v* $SYNCTHING_HOME/syncthing \
