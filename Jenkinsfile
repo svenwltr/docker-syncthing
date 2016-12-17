@@ -29,7 +29,9 @@ node {
 	}
 
 	stage('push') {
-		sh('git push origin master --tags')
+		sshagent(['github']) {
+			sh('git push origin master --tags')
+		}
 
 		mail body: "syncthing bumped to ${latest}",
 			subject: "syncthing bumped to ${latest}",
