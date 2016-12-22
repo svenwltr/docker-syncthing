@@ -1,3 +1,7 @@
+properties([
+	pipelineTriggers([cron('@daily')]),
+])
+
 node {
 	def latest
  
