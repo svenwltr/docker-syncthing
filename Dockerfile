@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:3.6
 MAINTAINER Sven Walter <sven@wltr.eu>
 
 ARG SYNCTHING_VERSION=v0.14.28
