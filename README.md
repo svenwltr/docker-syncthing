@@ -18,6 +18,8 @@ Alpine based Docker image for [syncthing](https://syncthing.net/).
 docker run \
 	--volume my-data-path:/data
 	-p 8384 \
+	-p 22000:22000 \
+	-p 21027:21027/udp \
 	svenwltr/syncthing
 ```
 
@@ -30,4 +32,8 @@ docker run \
 
 ## FAQ
 
-*No one asked me a thing ...*
+### Devices can't connect
+
+By default, Syncthing use uPNP to bypass NAT. If you don't want to run a uPNP server, [expose 2 ports](https://docs.syncthing.net/users/firewall.html#local-firewall):
+
+`-p 22000:22000 -p 21027:21027/udp`
