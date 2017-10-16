@@ -24,7 +24,7 @@ RUN set -x \
  && mv syncthing-linux-amd64-v* $SYNCTHING_HOME/syncthing \
  && rm -rf $SYNCTHING_HOME/syncthing/etc \
  && rm -rf $SYNCTHING_HOME/syncthing/*.pdf \
- && chmod 770 /syncthing/syncthing.sh \
+ && chmod 775 /syncthing/syncthing.sh \
  && apk del .build-deps
 
 WORKDIR $SYNCTHING_HOME
